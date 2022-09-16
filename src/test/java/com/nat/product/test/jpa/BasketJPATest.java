@@ -36,7 +36,7 @@ public class BasketJPATest {
 //        entityManager.persist(p1);
 //        Product p2 = new Product("Product 2", "Product 2 desc",12.01, NONE);
 //        entityManager.persist(p2);
-//
+//        basketRepository.
 //        assertThat(products).hasSize(3).contains(p1, p2, p3);
 //    }
 }
