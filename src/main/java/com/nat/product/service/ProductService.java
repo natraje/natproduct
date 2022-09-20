@@ -13,5 +13,6 @@ public interface ProductService {
     public ProductVO updateProduct(ProductVO productVO) throws ProductNotFoundException;
     public boolean deleteProduct(Long id) throws ProductNotFoundException;
     public ProductVO createProduct(ProductVO productVO);
+    public List<ProductVO> createProduct(List<ProductVO> products);
     public void deleteAll();
 }

@@ -5,6 +5,7 @@ import com.nat.product.dto.ProductVO;
 import com.nat.product.exception.ProductNotFoundException;
 import com.nat.product.model.Product;
 import com.nat.product.repository.ProductRepository;
+import com.nat.product.task.CreateProductTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -59,6 +60,12 @@ public class ProductServiceImpl implements ProductService {
         productNew=productRepository.save(productNew);
         ProductVO vo=modelMapper.map(productNew,ProductVO.class);
         return vo;
+    }
+
+    @Override
+    public List<ProductVO> createProduct(List<ProductVO> products) {
+
+        return CreateProductTask.startForkJoinSum(products,productRepository,modelMapper);
     }
 
     public void deleteAll(){

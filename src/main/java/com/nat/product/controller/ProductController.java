@@ -55,7 +55,14 @@ public class ProductController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    @PostMapping(PRODUCTS_all)
+    public ResponseEntity<List<ProductVO>> add(@RequestBody List<ProductVO> products) {
+        try {
+            return new ResponseEntity<>(productService.createProduct(products), HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
     @PutMapping(PRODUCTS_ID)
     public ResponseEntity<ProductVO> updateProduct(@PathVariable ("id") long id, @RequestBody ProductVO product) {
         product.setId(id);

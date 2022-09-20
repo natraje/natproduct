@@ -9,5 +9,6 @@ public class ApplicationConstants {
     public static final String API_PRODUCTS = "/api/products";
     public static final String API_PRODUCTS_ID = "/api/products/{id}";
     public static final String PRODUCTS = "/products";
+    public static final String PRODUCTS_all = "/productsall";
     public static final String PRODUCTS_ID = "/products/{id}";
 }
